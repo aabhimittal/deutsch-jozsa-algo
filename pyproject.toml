@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deutsch-jozsa-algo"
+version = "0.1.0"
+description = "Deutsch-Jozsa algorithm connected to classification, logistic regression, and quantum key distribution."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [{ name = "Abhishek Mittal" }]
+keywords = ["quantum-computing", "deutsch-jozsa", "qiskit", "machine-learning"]
+dependencies = [
+    "numpy>=1.23",
+    "scikit-learn>=1.1",
+]
+
+[project.optional-dependencies]
+quantum = ["qiskit>=1.0", "qiskit-aer>=0.13"]
+viz = ["matplotlib>=3.5"]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools]
+packages = ["deutsch_jozsa"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
